@@ -15,7 +15,6 @@ class CreateAssuntoTable extends Migration
     {
         Schema::create('assunto', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->primary('id');
             $table->string('descricao', '100');
             $table->integer('pai_id')->nullable();
             $table->timestamps();

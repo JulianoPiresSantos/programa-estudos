@@ -16,18 +16,17 @@ class CreateQuestaoTable extends Migration
         Schema::create('questao', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('enunciado');
-            $table->primary('id');
-            $table->integer('banca_id')->unsigned();
+            $table->unsignedBigInteger('banca_id');
             $table->foreign('banca_id')
                 ->references('id')
                 ->on('banca')
                 ->onDelete('cascade');
-            $table->integer('orgao_id')->unsigned();
+            $table->unsignedBigInteger('orgao_id');
             $table->foreign('orgao_id')
                 ->references('id')
                 ->on('orgao')
                 ->onDelete('cascade');;
-            $table->integer('assunto_id')->unsigned();
+            $table->unsignedBigInteger('assunto_id');
             $table->foreign('assunto_id')
                 ->references('id')
                 ->on('assunto')

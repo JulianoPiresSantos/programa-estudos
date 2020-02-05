@@ -15,7 +15,6 @@ class CreateBancaTable extends Migration
     {
         Schema::create('banca', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->primary('id');
             $table->string('nome','100');
             $table->timestamps();
         });
