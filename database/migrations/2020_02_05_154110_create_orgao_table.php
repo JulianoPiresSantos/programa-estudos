@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBancaTable extends Migration
+class CreateOrgaoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateBancaTable extends Migration
      */
     public function up()
     {
-        Schema::create('banca', function (Blueprint $table) {
+        Schema::create('orgao', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome','50');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateBancaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banca');
+        Schema::dropIfExists('orgao');
     }
 }

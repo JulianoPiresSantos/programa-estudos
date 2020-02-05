@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrgaoTable extends Migration
+class CreateAssuntoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateOrgaoTable extends Migration
      */
     public function up()
     {
-        Schema::create('orgao', function (Blueprint $table) {
+        Schema::create('assunto', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->primary('id');
+            $table->string('descricao', '100');
+            $table->integer('pai_id')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateOrgaoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orgao');
+        Schema::dropIfExists('assuntos');
     }
 }
